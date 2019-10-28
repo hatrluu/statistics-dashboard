@@ -1,13 +1,13 @@
-package duong_paul.duong_paul;
+package com.cbi.dashboard;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DuongPaulApplication {
+public class StatisticsDashboard {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DuongPaulApplication.class, args);
+		SpringApplication.run(StatisticsDashboard.class, args);
 	}
 
 }

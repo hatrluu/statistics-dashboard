@@ -1,4 +1,4 @@
-package duong_paul.duong_paul.models;
+package com.cbi.dashboard.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
