@@ -33,4 +33,9 @@ public class ApplicationController {
     public double averageActiveUsersInTargetApplications() {    	
 		return service.averageActiveUsersInTargetApplications();
     }
+    
+    @RequestMapping(value="/percentChangesPerTargetApplicationPerDay", method = RequestMethod.GET)
+    public double percentChangesPerTargetApplicationPerDay() {    	
+		return service.percentChangesPerTargetApplicationPerDay();
+    }
 }

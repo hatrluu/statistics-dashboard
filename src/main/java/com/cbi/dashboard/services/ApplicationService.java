@@ -38,4 +38,8 @@ public class ApplicationService extends Service {
 	public double averageActiveUsersInTargetApplications() {
 		return totalApplicationsAssignedToActiveUsers() / getTotalApplications();
 	}
+	
+	public double percentChangesPerTargetApplicationPerDay() {
+		return 1;//TODO
+	}
 }
