@@ -9,13 +9,32 @@ const axiosInst = axios.create({
 })
 class Users extends Component {
     state = {
-        totalUsers: 0
+        totalUsers: 0,
+        totalActive: 0,
+        averageApplicationsPerActiveUser: 0,
+        averageRolesPerActiveUser: 0,
+        averageEntitlementsPerActiveUser: 0
     }
     componentDidMount(){
-        axiosInst.get('/users/total').then((res)=>{
-            this.setState({totalUsers:res.data})
-        })
-        .catch(console.log);
+        axios.all([
+            axiosInst.get('/users/total'),
+            axiosInst.get('/users/totalActive'),
+            axiosInst.get('/users/averageApplicationsPerActiveUser'),
+            axiosInst.get('/users/averageRolesPerActiveUser'),
+            axiosInst.get('/users/averageEntitlementsPerActiveUser')
+        ]).then(axios.spread((total,totalActive,averageApplicationsPerActiveUser,averageRolesPerActiveUser,averageEntitlementsPerActiveUser)=>{
+            this.setState(()=>({
+                totalUsers: total.data,
+                totalActive: totalActive.data,
+                averageApplicationsPerActiveUser: averageApplicationsPerActiveUser.data,
+                averageRolesPerActiveUser: averageRolesPerActiveUser.data,
+                averageEntitlementsPerActiveUser: averageEntitlementsPerActiveUser.data
+            }))
+        }))
+        // axiosInst.get('/users/total').then((res)=>{
+        //     this.setState({totalUsers:res.data})
+        // })
+        // .catch(console.log);
     }
     render(){
         return(
@@ -34,19 +53,19 @@ class Users extends Component {
                         </tr>
                         <tr>
                             <th scope="row">Concurrent logins at peak usage time</th>
-                            <td><RefBarChart min={25} mid={100} max={250} valueProp={0}/></td>
+                            <td><RefBarChart min={25} mid={100} max={250} valueProp={this.state.totalActive}/></td>
                         </tr>
                         <tr>
                             <th scope="row">Average number of Applications per active user</th>
-                            <td><RefBarChart min={2} mid={5} max={10} valueProp={0.35}/></td>
+                            <td><RefBarChart min={2} mid={5} max={10} valueProp={this.state.averageApplicationsPerActiveUser}/></td>
                         </tr>
                         <tr>
                             <th scope="row">Average number of Roles per active user</th>
-                            <td><RefBarChart min={2} mid={5} max={10} valueProp={1.24}/></td>
+                            <td><RefBarChart min={2} mid={5} max={10} valueProp={this.state.averageRolesPerActiveUser}/></td>
                         </tr>
                         <tr>
                             <th scope="row">Average number of Entitlements per active user</th>
-                            <td><RefBarChart min={5} mid={10} max={20} valueProp={15.37}/></td>
+                            <td><RefBarChart min={5} mid={10} max={20} valueProp={this.state.averageEntitlementsPerActiveUser}/></td>
                         </tr>
                     </tbody>
                 </table>
