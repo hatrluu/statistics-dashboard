@@ -4,22 +4,13 @@ import { Link } from "react-router-dom";
 
 const Header = props => {
   const { branding } = props;
+  
   return (
-    <nav className="navbar navbar-expand-sm navbar-dark bg-danger mb-3 py-0">
-      <div className="container">
-        <a href="/" className="navbar-brand">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark pb-3 py-0">
+      <div>
+        <span href="/" className="h1 text-secondary text-decoration-none">
           {branding}
-        </a>
-        <div>
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link to="/add" className="nav-link">
-                <i className="fas fa-plus" />
-                Add New Contact
-              </Link>
-            </li>
-          </ul>
-        </div>
+        </span>
       </div>
     </nav>
   );
