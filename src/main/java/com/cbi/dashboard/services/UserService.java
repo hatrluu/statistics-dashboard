@@ -1,6 +1,10 @@
 package com.cbi.dashboard.services;
 
 public interface UserService {
-    public int getTotalUsers();
-    public int getTotalApplications();
+    public double getTotalUsers();
+    public double getTotalActiveUsers();
+    public double getPeakConcurrentLogins();
+    public double getAverageApplicationsPerActiveUser();
+    public double getAverageRolesPerActiveUser();
+    public double getAverageEntitlementsPerActiveUser();
 }
