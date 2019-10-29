@@ -8,7 +8,7 @@ const Header = props => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark pb-3 py-0">
       <div>
-        <span href="/" className="h1 text-secondary text-decoration-none">
+        <span href="/" className="h1 text-white-50 text-decoration-none">
           {branding}
         </span>
       </div>

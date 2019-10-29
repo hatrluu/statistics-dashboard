@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import logo from '../assets/constellation-brands-logo.png';
 
 class Sidebar extends React.Component {
     constructor(props) {
@@ -21,21 +22,24 @@ class Sidebar extends React.Component {
             {label: 'Access Policy', link:'/access-policy'}
         ]
         return(
-            <div className="col-xs-2 d-none d-sm-block bg-dark sidebar">
+            <div className="col-1 bg-light sidebar">
                 <div className="sidebar-sticky">
-                    <ul className="pl-2 pr-2">
-                        <li className="list-unstyled m-4">
-                            <i className="fas fa-angle-up fa-4x text-white text-decoration-none"></i>
+                    <ul className="pl-0">
+                        <li className="list-unstyled mt-4">
+                            <a href="/">
+                                <img src={logo} width={100+'px'} atl="Constellation Brands"></img>
+                            </a>
                         </li>
+                        <li></li>
                         {navList.map(nav => {
                             return (
-                                <li key={nav.label} className="list-unstyled m-4">
-                                    <h6 className="">
-                                        <Link to={nav.link} className="text-white text-decoration-none" onClick={()=>this.handleClick(nav.label)}>
-                                            <i className="fab fa-4x fa-accessible-icon pb-1"></i><br/>
+                                <li key={nav.label} className="list-unstyled mb-4 mt-4">
+                                    <h5 className="">
+                                        <Link to={nav.link} className="text-dark text-decoration-none" onClick={()=>this.handleClick(nav.label)}>
+                                            {/* <i className="fab fa-4x fa-accessible-icon pb-1"></i><br/> */}
                                             {nav.label}
                                         </Link>
-                                    </h6>
+                                    </h5>
                                 </li>)
                         })}
                     </ul>

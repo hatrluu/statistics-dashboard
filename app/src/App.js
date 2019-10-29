@@ -21,9 +21,8 @@ import './App.css';
 import Sidebar from './components/Sidebar';
 
 class App extends Component {
-  
-  constructor(props)
-  {
+
+  constructor(props) {
     super(props)
     this.state = {
       branding: 'Users'
@@ -39,24 +38,22 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <div className="container-fluid">
-            <div className="row">
-              <Sidebar
-                headerBranding={this.setBranding}
-              />
-              <main className="col p-0" role="main">
-                <Header branding={this.state.branding} />
-                <Provider>
-                  <Route exact path="/(|users)" component={Users} />
-                  <Route exact path="/roles" component={Roles} />
-                  <Route exact path="/entitlement" component={Entitlement} />
-                  <Route exact path="/applications" component={Applications} />
-                  <Route exact path="/requests" component={Requests} />
-                  <Route exact path="/certifications" component={Certifications} />
-                  <Route exact path="/access-policy" component={AccessPolicy} />
-                </Provider>
-              </main>
-            </div>
+          <div className="row no-gutters">
+            <Sidebar
+              headerBranding={this.setBranding}
+            />
+            <main className="col p-0" role="main">
+              <Header branding={this.state.branding} />
+              <Provider>
+                <Route exact path="/(|users)" component={Users} />
+                <Route exact path="/roles" component={Roles} />
+                <Route exact path="/entitlement" component={Entitlement} />
+                <Route exact path="/applications" component={Applications} />
+                <Route exact path="/requests" component={Requests} />
+                <Route exact path="/certifications" component={Certifications} />
+                <Route exact path="/access-policy" component={AccessPolicy} />
+              </Provider>
+            </main>
           </div>
         </div>
       </Router>
