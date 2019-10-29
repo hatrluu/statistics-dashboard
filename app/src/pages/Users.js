@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import RefBarChart from '../components/RefBarChart';
 import '../styles/BootStrapTable.css'
+import { axiosInst } from '../App';
 import axios from 'axios';
 
-const axiosInst = axios.create({
-    baseURL:'http://localhost:8080',
-    timeout: 1000
-})
 class Users extends Component {
     state = {
         totalUsers: 0,
@@ -17,11 +14,11 @@ class Users extends Component {
     }
     componentDidMount(){
         axios.all([
-            axiosInst.get('/users/total'),
-            axiosInst.get('/users/totalActive'),
-            axiosInst.get('/users/averageApplicationsPerActiveUser'),
-            axiosInst.get('/users/averageRolesPerActiveUser'),
-            axiosInst.get('/users/averageEntitlementsPerActiveUser')
+            axiosInst.get('/user/total'),
+            axiosInst.get('/user/totalActive'),
+            axiosInst.get('/user/averageApplicationsPerActiveUser'),
+            axiosInst.get('/user/averageRolesPerActiveUser'),
+            axiosInst.get('/user/averageEntitlementsPerActiveUser')
         ]).then(axios.spread((total,totalActive,averageApplicationsPerActiveUser,averageRolesPerActiveUser,averageEntitlementsPerActiveUser)=>{
             this.setState(()=>({
                 totalUsers: total.data,
@@ -31,10 +28,6 @@ class Users extends Component {
                 averageEntitlementsPerActiveUser: averageEntitlementsPerActiveUser.data
             }))
         }))
-        // axiosInst.get('/users/total').then((res)=>{
-        //     this.setState({totalUsers:res.data})
-        // })
-        // .catch(console.log);
     }
     render(){
         return(

@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Contacts from './pages/Contacts';
-import EditContact from './pages/EditContact';
-import AddContact from './pages/AddContact';
 
 // Pages
 import Users from './pages/Users'
@@ -19,7 +16,12 @@ import { Provider } from './context';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Sidebar from './components/Sidebar';
+import axios from 'axios';
 
+export const axiosInst = axios.create({
+    baseURL:'http://localhost:8080',
+    timeout: 1000
+})
 class App extends Component {
 
   constructor(props) {
@@ -60,5 +62,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;
