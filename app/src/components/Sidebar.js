@@ -22,7 +22,7 @@ class Sidebar extends React.Component {
             {label: 'Access Policy', link:'/access-policy'}
         ]
         return(
-            <div className="col-1 bg-light sidebar">
+            <div className="col-md-1 bg-light sidebar">
                 <div className="sidebar-sticky">
                     <ul className="pl-0">
                         <li className="list-unstyled mt-4">

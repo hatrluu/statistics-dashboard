@@ -33,6 +33,12 @@ main {
         width: 100%;
         height: 1px !important;
     }
+  
+}
+@media (max-width: 1445px) {
+    .sidebar {
+        width: 10px;
+    }
 }
 #back-to-bootsnipp {
     position: fixed;
