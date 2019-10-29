@@ -9,6 +9,9 @@ public class ApplicationService extends Service {
 	@Autowired
 	UserService userService;
 	
+	@Autowired
+	EntitlementService entitlementService;
+	
 	public double getTotalApplications() {
 		return singleQuery("SELECT COUNT(*) FROM APP_INSTANCE");
 	}
@@ -20,6 +23,10 @@ public class ApplicationService extends Service {
 				+ "AND OIU.USR_KEY = USR.USR_KEY AND USR.USR_STATUS = 'Active' "
 				+ "GROUP BY APP_INSTANCE.APP_INSTANCE_DISPLAY_NAME ORDER BY 1 DESC) "
 				+ "WHERE ROWNUM = 1");
+	}
+	
+	public double getAverageEntitlementsPerApplication() {
+		return entitlementService.getTotalEntitlements() / getTotalApplications();
 	}
 	
 	private double totalApplicationsAssignedToActiveUsers() {

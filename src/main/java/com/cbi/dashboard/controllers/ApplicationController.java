@@ -19,6 +19,11 @@ public class ApplicationController {
 		return service.getTotalApplications();
     }
     
+    @RequestMapping(value="/averageEntitlementsPerApplication", method = RequestMethod.GET)
+    public double getAverageEntitlementsPerApplication() {    	
+		return service.getAverageEntitlementsPerApplication();
+    }
+    
     @RequestMapping(value="/maxActiveUsersInTargetApplication", method = RequestMethod.GET)
     public double maxActiveUsersInTargetApplication() {    	
 		return service.maxActiveUsersInTargetApplication();
