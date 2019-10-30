@@ -1,0 +1,5 @@
+.sidebar {
+    box-shadow: 2px 3px 10px rgb(43, 43, 43);
+    z-index: 1000;
+    height: 100%;
+}

@@ -1,0 +1,19 @@
+<nav class="bg-light sidebar">
+    <div class="sidebar-sticky ">
+        <ul class="list-unstyled">
+            <li class="sidebar-header pt-3">
+                <a href="/">
+                    <img src="assets/constellation-brands-logo.png"  width="100px" atl="Constellation Brands">
+                </a>
+            </li>
+            <li></li>
+                <li class="mb-4 mt-4" *ngFor="let nav of navList">
+                    <h5>
+                        <a [routerLink]="nav.link" class="text-dark text-decoration-none" (click)="handleClick(nav.label)">
+                            {{nav.label}}
+                        </a>
+                    </h5>
+                </li>
+        </ul>
+    </div>
+</nav>

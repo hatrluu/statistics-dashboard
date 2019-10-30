@@ -1,0 +1,9 @@
+.table {
+    font-size: 25px;
+}
+.table tbody th {
+    width: 20%;
+    text-align: right;
+    font-weight: 500;
+    font-size: 18px;
+}

@@ -1,0 +1,16 @@
+<div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Metric</th>
+                    <th scope="col">Values</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dat of data">
+                    <th scope="row">{{dat.metric}}</th>
+                    <td><app-ref-bar-chart [min]="dat.min" [med]="dat.med" [max]="dat.max" [value]="dat.value"></app-ref-bar-chart></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

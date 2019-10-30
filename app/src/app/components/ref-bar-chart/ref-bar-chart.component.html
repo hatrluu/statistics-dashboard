@@ -1,0 +1,9 @@
+<div class="ref-bar">
+    <span class="ref-bar-text text-success">{{min}}</span>
+    <div class="progress bar-height">
+        <span class="progress-bar-text">{{value}} ({{percentage}}%)</span>
+        <div class="progress-bar bar-height bg-info" [style.width.%]="percentage">
+        </div>
+    </div>
+    <span class="ref-bar-text text-danger">{{max}}</span>
+</div>

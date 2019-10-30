@@ -1,0 +1,19 @@
+import { Injectable } from '@angular/core';
+import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpErrorResponse } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
+import { throwError, Observable } from 'rxjs';
+
+@Injectable()
+export class InterceptorsService implements HttpInterceptor {
+    constructor() { }
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        const proxyReq = req.clone({ url: `${'http://localhost:8080/'}${req.url}` });
+        return next.handle(proxyReq)
+            .pipe(
+                catchError((err: any) => {
+                    console.log(err);
+                    throw throwError(err)
+                })
+            );
+    }
+}
