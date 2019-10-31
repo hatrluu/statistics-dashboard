@@ -12,17 +12,17 @@ import { AccessPolicyComponent } from './views/access-policy/access-policy.compo
 
 const routes: Routes = [
   {path: '', pathMatch:'full',redirectTo:'users'},
-  {path:'users', component: UsersComponent, data:{routeName: 'Users'}},
-  {path:'roles', component: RolesComponent, data:{routeName: 'Roles'}},
-  {path:'entitlement', component: EntitlementComponent, data:{routeName: 'Entitlement'}},
-  {path:'applications', component: ApplicationsComponent, data:{routeName: 'Applications'}},
-  {path:'requests', component: RequestsComponent, data:{routeName: 'Requests'}},
-  {path:'certifications', component: CertificationsComponent, data:{routeName: 'Certifications'}},
-  {path:'access-policy', component: AccessPolicyComponent, data:{routeName: 'Access Policy'}}
+  {path:'users', component: UsersComponent, data:{routeName: 'Users', animation:'Users'}},
+  {path:'roles', component: RolesComponent, data:{routeName: 'Roles', animation:'Roles'}},
+  {path:'entitlement', component: EntitlementComponent, data:{routeName: 'Entitlement', animation:'Entitlement'}},
+  {path:'applications', component: ApplicationsComponent, data:{routeName: 'Applications', animation:'Applications'}},
+  {path:'requests', component: RequestsComponent, data:{routeName: 'Requests', animation:'Requests'}},
+  {path:'certifications', component: CertificationsComponent, data:{routeName: 'Certifications', animation:'Certifications'}},
+  {path:'access-policy', component: AccessPolicyComponent, data:{routeName: 'Access Policy', animation:'AccessPolicy'}}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

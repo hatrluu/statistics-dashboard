@@ -12,6 +12,9 @@
     background-color: rgb(207, 207, 207);
     transition: background-color 200ms;
 }
+.nav-link-active{
+    background-color: rgb(204, 204, 204);
+}
 .credit{
     word-wrap: break-word;
     width: 100px;

@@ -24,6 +24,7 @@ import { DataTableComponent } from './components/data-table/data-table.component
 //Styling
 import { MatSidenavModule } from '@angular/material/sidenav'; 
 import { MatIconModule } from '@angular/material/icon';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
 
 @NgModule({
   declarations: [
@@ -46,12 +47,13 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserAnimationsModule,
     HttpClientModule,
     MatSidenavModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: InterceptorsService, multi: true},
-    {provide:APP_BASE_HREF,useValue:'/statistics-dashboard'},
-    { provide: LocationStrategy, useClass: HashLocationStrategy}
+    // {provide:APP_BASE_HREF,useValue:'/statistics-dashboard'},
+    { provide: LocationStrategy, useClass: PathLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })

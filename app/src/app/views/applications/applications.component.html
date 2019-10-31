@@ -1,1 +1,2 @@
-<app-data-table [data]="data"></app-data-table>
+<app-data-table *ngIf="isLoaded" [data]="data"></app-data-table>
+<mat-spinner *ngIf="!isLoaded"></mat-spinner>

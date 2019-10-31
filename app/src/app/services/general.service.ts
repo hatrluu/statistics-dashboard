@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class GeneralService {
-  private _headerLabel = new BehaviorSubject('Users');
+  private _headerLabel = new BehaviorSubject('');
   headerLabel = this._headerLabel.asObservable();
 
   getHeader(label: string){

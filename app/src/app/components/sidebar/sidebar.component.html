@@ -3,12 +3,13 @@
         <img src="assets/constellation-brands-logo.png" width="100px" atl="Constellation Brands">
     </a>
 </div>
-<mat-sidenav-container class="sidebar">
+<mat-sidenav-container class="sidebar mt-5">
     <mat-sidenav-content class="sidebar-sticky">
         <ul class="list-unstyled">
-            <li class="bd-highlight mb-4 mt-4 nav-link" *ngFor="let nav of navList">
-                <a [routerLink]="nav.link" class="text-dark text-decoration-none font-weight-bold" (click)="handleClick(nav.label)">
-                <!-- <img [src]="assets/'nav.link'-logo.svg" width="40px"/> -->
+            <li class="bd-highlight nav-link" *ngFor="let nav of navList" (click)="handleClick(nav.label)"
+            [routerLinkActive]="['nav-link-active']">
+                <a [routerLink]="nav.link" class="text-dark text-decoration-none font-weight-bold">
+                <img src={{nav.img}} width="40px"/>
                     <span>{{nav.label}}</span>
                 </a>
             </li>

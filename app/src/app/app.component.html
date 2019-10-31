@@ -1,9 +1,9 @@
 <div class="App">
     <div class="row no-gutters">
         <app-sidebar class="bg-light"></app-sidebar>
-        <main class="col p-0" role="main">
+        <main [@routeAnimations]="preparedRoute(outlet)" class="col p-0" role="main">
             <app-header></app-header>
-            <router-outlet></router-outlet>
+            <router-outlet #outlet="outlet"></router-outlet>
         </main>
     </div>
 </div>
