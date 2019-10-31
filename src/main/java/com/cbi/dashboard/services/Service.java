@@ -11,14 +11,11 @@ public abstract class Service {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;  
 	
-	protected double singleQuery(String query) {
-		return singleQuery(query, "COUNT(*)");
-	}
+//	protected double singleQuery(String query) {
+//		return singleQuery(query, "COUNT(*)");
+//	}
 	
-	protected double singleQuery(String query, String columnName) {
-		return jdbcTemplate.query(
-                query, new Object[] { },
-                (rs, rowNum) -> rs.getDouble(columnName)
-        ).get(0);
+	protected double singleQuery(String query) {
+		return jdbcTemplate.queryForObject(query, Double.class);
 	}
 }
