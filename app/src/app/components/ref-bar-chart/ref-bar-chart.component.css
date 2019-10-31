@@ -1,5 +1,5 @@
 .progress {
-    width: 60%;
+    width: 70%;
 }
 .ref-bar{
     display: flex;
@@ -19,6 +19,9 @@
     height: 30px;
     width: 5px;
     background-color: black;
+}
+.progress-bar{
+    background-color: rgb(88, 158, 238);
 }
 .progress-bar-text{
     position: absolute;

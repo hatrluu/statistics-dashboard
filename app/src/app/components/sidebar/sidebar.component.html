@@ -1,23 +1,25 @@
-<div class="sidebar-header pt-3">
-    <a href="/">
-        <img src="assets/constellation-brands-logo.png" width="100px" atl="Constellation Brands">
-    </a>
+<div class="">
+    <div class="sidebar-header pt-3">
+        <a href="/">
+            <img src="assets/constellation-brands-logo.png" width="100px" atl="Constellation Brands">
+        </a>
+    </div>
+    <mat-sidenav-container class="sidebar mt-5">
+        <mat-sidenav-content class="sidebar-sticky">
+            <ul class="list-unstyled">
+                <li class="bd-highlight nav-link" *ngFor="let nav of navList" (click)="handleClick(nav.label)"
+                [routerLinkActive]="['nav-link-active']">
+                    <a [routerLink]="nav.link" class="text-dark text-decoration-none font-weight-bold">
+                    <img src={{nav.img}} width="40px"/>
+                        <span>{{nav.label}}</span>
+                    </a>
+                </li>
+            </ul>
+        </mat-sidenav-content>
+        <!-- <div class="credit">
+            <div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            <div>Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>    
+        </div> -->
+    </mat-sidenav-container>
 </div>
-<mat-sidenav-container class="sidebar mt-5">
-    <mat-sidenav-content class="sidebar-sticky">
-        <ul class="list-unstyled">
-            <li class="bd-highlight nav-link" *ngFor="let nav of navList" (click)="handleClick(nav.label)"
-            [routerLinkActive]="['nav-link-active']">
-                <a [routerLink]="nav.link" class="text-dark text-decoration-none font-weight-bold">
-                <img src={{nav.img}} width="40px"/>
-                    <span>{{nav.label}}</span>
-                </a>
-            </li>
-        </ul>
-    </mat-sidenav-content>
-    <!-- <div class="credit">
-        <div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-        <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-        <div>Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>    
-    </div> -->
-</mat-sidenav-container>
