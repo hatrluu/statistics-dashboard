@@ -9,8 +9,6 @@ import { ApplicationsComponent } from './views/applications/applications.compone
 import { RequestsComponent } from './views/requests/requests.component';
 import { CertificationsComponent } from './views/certifications/certifications.component';
 import { AccessPolicyComponent } from './views/access-policy/access-policy.component';
-import { APP_BASE_HREF } from '@angular/common';
-
 
 const routes: Routes = [
   {path: '', pathMatch:'full',redirectTo:'users'},
@@ -24,7 +22,6 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  providers: [{provide:APP_BASE_HREF,useValue:'/statistics-dashboard'}],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })

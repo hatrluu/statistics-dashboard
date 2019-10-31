@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http'
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorsService } from './services/interceptor.service';
+import { APP_BASE_HREF, HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
+
 //Pages
 import { UsersComponent } from './views/users/users.component';
 import { RolesComponent } from './views/roles/roles.component';
@@ -46,7 +48,11 @@ import { MatIconModule } from '@angular/material/icon';
     MatSidenavModule,
     MatIconModule
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: InterceptorsService, multi: true}],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: InterceptorsService, multi: true},
+    {provide:APP_BASE_HREF,useValue:'/statistics-dashboard'},
+    { provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

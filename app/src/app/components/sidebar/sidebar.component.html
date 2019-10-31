@@ -1,19 +1,22 @@
-<div class="bg-light">
-    <div class="sidebar-header pt-3">
-        <a href="/">
-            <img src="assets/constellation-brands-logo.png" width="100px" atl="Constellation Brands">
-        </a>
-    </div>
-    <mat-sidenav-container class="sidebar p-3">
-        <mat-sidenav-content class="sidebar-sticky">
-            <ul class="list-unstyled">
-                <li class="d-flex flex-column bd-highlight mb-4 mt-4" *ngFor="let nav of navList">
-                    <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> -->
-                    <a [routerLink]="nav.link" class="text-dark text-decoration-none font-weight-bold" (click)="handleClick(nav.label)">
-                        {{nav.label}}
-                    </a>
-                </li>
-            </ul>
-        </mat-sidenav-content>
-    </mat-sidenav-container>
+<div class="sidebar-header pt-3">
+    <a href="/">
+        <img src="assets/constellation-brands-logo.png" width="100px" atl="Constellation Brands">
+    </a>
 </div>
+<mat-sidenav-container class="sidebar">
+    <mat-sidenav-content class="sidebar-sticky">
+        <ul class="list-unstyled">
+            <li class="bd-highlight mb-4 mt-4 nav-link" *ngFor="let nav of navList">
+                <a [routerLink]="nav.link" class="text-dark text-decoration-none font-weight-bold" (click)="handleClick(nav.label)">
+                <!-- <img [src]="assets/'nav.link'-logo.svg" width="40px"/> -->
+                    <span>{{nav.label}}</span>
+                </a>
+            </li>
+        </ul>
+    </mat-sidenav-content>
+    <!-- <div class="credit">
+        <div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        <div>Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>    
+    </div> -->
+</mat-sidenav-container>

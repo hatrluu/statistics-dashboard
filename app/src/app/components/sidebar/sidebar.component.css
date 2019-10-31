@@ -2,7 +2,17 @@
     z-index: 1000;
     height: 100%;
 }
-.sidebar ul li{
+
+.nav-link a{
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+.nav-link:hover{
+    background-color: rgb(207, 207, 207);
+    transition: background-color 200ms;
+}
+.credit{
+    word-wrap: break-word;
+    width: 100px;
 }
