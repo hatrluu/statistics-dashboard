@@ -19,6 +19,9 @@ import { RefBarChartComponent } from './components/ref-bar-chart/ref-bar-chart.c
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DataTableComponent } from './components/data-table/data-table.component';
 
+//Styling
+import { MatSidenavModule } from '@angular/material/sidenav'; 
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,9 @@ import { DataTableComponent } from './components/data-table/data-table.component
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatIconModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: InterceptorsService, multi: true}],
   bootstrap: [AppComponent]

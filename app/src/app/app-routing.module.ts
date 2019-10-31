@@ -9,20 +9,22 @@ import { ApplicationsComponent } from './views/applications/applications.compone
 import { RequestsComponent } from './views/requests/requests.component';
 import { CertificationsComponent } from './views/certifications/certifications.component';
 import { AccessPolicyComponent } from './views/access-policy/access-policy.component';
+import { APP_BASE_HREF } from '@angular/common';
 
 
 const routes: Routes = [
   {path: '', pathMatch:'full',redirectTo:'users'},
-  {path:'users', component: UsersComponent},
-  {path:'roles', component: RolesComponent},
-  {path:'entitlement', component: EntitlementComponent},
-  {path:'applications', component: ApplicationsComponent},
-  {path:'requests', component: RequestsComponent},
-  {path:'certifications', component: CertificationsComponent},
-  {path:'access-policy', component: AccessPolicyComponent}
+  {path:'users', component: UsersComponent, data:{routeName: 'Users'}},
+  {path:'roles', component: RolesComponent, data:{routeName: 'Roles'}},
+  {path:'entitlement', component: EntitlementComponent, data:{routeName: 'Entitlement'}},
+  {path:'applications', component: ApplicationsComponent, data:{routeName: 'Applications'}},
+  {path:'requests', component: RequestsComponent, data:{routeName: 'Requests'}},
+  {path:'certifications', component: CertificationsComponent, data:{routeName: 'Certifications'}},
+  {path:'access-policy', component: AccessPolicyComponent, data:{routeName: 'Access Policy'}}
 ];
 
 @NgModule({
+  providers: [{provide:APP_BASE_HREF,useValue:'/statistics-dashboard'}],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })

@@ -1,19 +1,19 @@
-<nav class="bg-light sidebar">
-    <div class="sidebar-sticky ">
-        <ul class="list-unstyled">
-            <li class="sidebar-header pt-3">
-                <a href="/">
-                    <img src="assets/constellation-brands-logo.png"  width="100px" atl="Constellation Brands">
-                </a>
-            </li>
-            <li></li>
-                <li class="mb-4 mt-4" *ngFor="let nav of navList">
-                    <h5>
-                        <a [routerLink]="nav.link" class="text-dark text-decoration-none" (click)="handleClick(nav.label)">
-                            {{nav.label}}
-                        </a>
-                    </h5>
-                </li>
-        </ul>
+<div class="bg-light">
+    <div class="sidebar-header pt-3">
+        <a href="/">
+            <img src="assets/constellation-brands-logo.png" width="100px" atl="Constellation Brands">
+        </a>
     </div>
-</nav>
+    <mat-sidenav-container class="sidebar p-3">
+        <mat-sidenav-content class="sidebar-sticky">
+            <ul class="list-unstyled">
+                <li class="d-flex flex-column bd-highlight mb-4 mt-4" *ngFor="let nav of navList">
+                    <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> -->
+                    <a [routerLink]="nav.link" class="text-dark text-decoration-none font-weight-bold" (click)="handleClick(nav.label)">
+                        {{nav.label}}
+                    </a>
+                </li>
+            </ul>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

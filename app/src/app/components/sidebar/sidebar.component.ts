@@ -13,15 +13,11 @@ export class SidebarComponent implements OnInit {
               private generalService: GeneralService) {}
 
   ngOnInit() {
-    this.navList  = [
-      {label: 'Users', link:'/users'},
-      {label: 'Roles', link:'/roles'},
-      {label: 'Entitlement', link:'/entitlement'},
-      {label: 'Applications', link:'/applications'},
-      {label: 'Requests', link:'/requests'},
-      {label: 'Certifications', link:'/certifications'},
-      {label: 'Access Policy', link:'/access-policy'}
-    ]
+    this.router.config.forEach(nav=>{
+      if(nav.data && nav.data.routeName){
+        this.navList.push({link:nav.path, label: nav.data.routeName});
+      }
+    })
   }
 
   handleClick(e){
