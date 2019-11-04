@@ -16,7 +16,7 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
     this.router.config.forEach(nav=>{
       if(nav.data && nav.data.routeName){
-        this.navList.push({link:nav.path, label: nav.data.routeName, img: `assets/${nav.path}-logo.svg`});
+        this.navList.push({link:nav.path, label: nav.data.routeName, img: `assets/${nav.path}-logo.png`});
       }
     })
   }
