@@ -3,39 +3,79 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
+	<!-- <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.22.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
+		<relativePath/> lookup parent from repository
+	</parent> -->
+	
+	<parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <!-- Using version 1.1.12 for Java SE 6 compatibility -->
+        <version>1.1.12.RELEASE</version>
+    </parent>
 
-	<groupId>com.cbi</groupId>
-	<artifactId>statistics_dashboard</artifactId>
+	<groupId>com.cbi.dashboard</groupId>
+	<artifactId>statistics-dashboard</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<description>Statistics dashboard for IDAM applications</description>
-	<name>statistics_dashboard</name>
+	<name>statistics-dashboard</name>
 	<packaging>war</packaging>
 
 	<properties>
-		<java.version>1.7</java.version>
+		<java.version>1.6</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.7</maven.compiler.source>
-		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.compiler.source>1.6</maven.compiler.source>
+		<maven.compiler.target>1.6</maven.compiler.target>
+		<spring.version>4.2.5.RELEASE</spring.version>
+        <spring.boot.version>1.1.12.RELEASE</spring.boot.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-legacy</artifactId>
+            <version>1.0.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>test</scope>
+        </dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-rest</artifactId>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
 		</dependency>
-		<dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+		<dependency>
+		    <groupId>com.sun.activation</groupId>
+		    <artifactId>javax.activation</artifactId>
+		    <version>1.2.0</version>
 		</dependency>
 		<dependency>
 		    <groupId>com.oracle</groupId>
@@ -44,15 +84,71 @@
 		    <scope>system</scope>
 		    <systemPath>${basedir}/lib/ojdbc7.jar</systemPath>
 		</dependency>
+		<dependency>
+		    <groupId>org.tuckey</groupId>
+		    <artifactId>urlrewritefilter</artifactId>
+		    <version>4.0.3</version>
+		</dependency>
 	</dependencies>
-
+	<!-- <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-legacy</artifactId>
+            <version>1.0.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>test</scope>
+        </dependency>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+		<dependency>
+		    <groupId>com.sun.activation</groupId>
+		    <artifactId>javax.activation</artifactId>
+		    <version>1.2.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.oracle</groupId>
+		    <artifactId>ojdbc</artifactId>
+		    <version>14</version>
+		    <scope>system</scope>
+		    <systemPath>${basedir}/lib/ojdbc7.jar</systemPath>
+		</dependency>
+    </dependencies> -->
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<groupId>com.github.eirslett</groupId>
 				<artifactId>frontend-maven-plugin</artifactId>
 				<version>1.6</version>
@@ -60,7 +156,7 @@
 					<workingDirectory>app</workingDirectory>
 				</configuration>
 				<executions>
-					<!-- <execution>
+					<execution>
 						<id>install node and npm</id>
 						<goals>
 							<goal>install-node-and-npm</goal>
@@ -87,28 +183,50 @@
 						<configuration>
 							<arguments>run build</arguments>
 						</configuration>
-					</execution> -->
-				</executions>
-			</plugin>
-			<plugin>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>generate-resources</phase>
-						<configuration>
-							<target>
-								<copy todir="${project.build.directory}/classes/public">
-									<!-- <fileset dir="${project.basedir}/app/build"/> -->
-									<fileset dir="${project.basedir}/app/dist/app"/>
-								</copy>
-							</target>
-						</configuration>
-						<goals>
-							<goal>run</goal>
-						</goals>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin> -->
+			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <attachClasses>true</attachClasses>
+                    <archive>
+                        <manifestEntries>
+                            <Weblogic-Application-Version>${project.version}</Weblogic-Application-Version>
+                        </manifestEntries>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <addClasspath>lib/</addClasspath>
+                        </manifest>
+                    </archive>
+                    <webResources>
+                        <resource>
+                            <directory>${project.basedir}/app/dist/app</directory>
+                        </resource>
+                        <resource>
+                            <directory>${project.basedir}/src/main/webapp</directory>
+                        </resource>
+                    </webResources>
+                    <warName>${project.artifactId}</warName>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
+                <configuration>
+                    <classifier>BOOT</classifier>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 		</plugins>
 	</build>
 </project>
