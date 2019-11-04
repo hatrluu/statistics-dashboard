@@ -54,7 +54,6 @@ import {MatDividerModule} from '@angular/material/divider';
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: InterceptorsService, multi: true},
-    // {provide:APP_BASE_HREF,useValue:'/statistics-dashboard'},
     { provide: LocationStrategy, useClass: PathLocationStrategy}
   ],
   bootstrap: [AppComponent]
