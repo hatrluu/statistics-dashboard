@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cbi.dashboard.services.RequestService;
 
 @RestController
-@RequestMapping("/application")
+@RequestMapping("/request")
 public class RequestController {
 
     @Autowired

@@ -1,5 +1,8 @@
 package com.cbi.dashboard.services;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class AccessPolicyService extends Service {
 
 	public double getTotalAccessPolicies() {

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cbi.dashboard.services.OrganizationService;
 
 @RestController
-@RequestMapping("/application")
+@RequestMapping("/organization")
 public class OrganizationController {
 
     @Autowired
