@@ -19,23 +19,23 @@ public class ApplicationController {
 		return service.getTotalApplications();
     }
     
-    @RequestMapping(value="/averageEntitlementsPerApplication", method = RequestMethod.GET)
+    @RequestMapping(value="/average-entitlements", method = RequestMethod.GET)
     public double getAverageEntitlementsPerApplication() {    	
 		return service.getAverageEntitlementsPerApplication();
     }
     
-    @RequestMapping(value="/maxActiveUsersInTargetApplication", method = RequestMethod.GET)
-    public double maxActiveUsersInTargetApplication() {    	
-		return service.maxActiveUsersInTargetApplication();
+    @RequestMapping(value="/max-active-users", method = RequestMethod.GET)
+    public double getMaxActiveUsersInTargetApplication() {    	
+		return service.getMaxActiveUsersInTargetApplication();
     }
     
-    @RequestMapping(value="/averageActiveUsersInTargetApplications", method = RequestMethod.GET)
-    public double averageActiveUsersInTargetApplications() {    	
-		return service.averageActiveUsersInTargetApplications();
+    @RequestMapping(value="/average-active-users", method = RequestMethod.GET)
+    public double getAverageActiveUsersInTargetApplication() {    	
+		return service.getAverageActiveUsersInTargetApplication();
     }
     
-    @RequestMapping(value="/percentChangesPerTargetApplicationPerDay", method = RequestMethod.GET)
-    public double percentChangesPerTargetApplicationPerDay() {    	
-		return service.percentChangesPerTargetApplicationPerDay();
+    @RequestMapping(value="/percent-changes", method = RequestMethod.GET)
+    public double getPercentChangesPerTargetApplicationPerDay() {    	
+		return service.getPercentChangesPerTargetApplicationPerDay();
     }
 }

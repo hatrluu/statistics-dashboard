@@ -19,28 +19,23 @@ public class UserController {
         return service.getTotalUsers();
     }
     
-    @RequestMapping(value="/totalActive", method = RequestMethod.GET)
+    @RequestMapping(value="/total-active", method = RequestMethod.GET)
     public double getTotalActiveUsers() {
         return service.getTotalActiveUsers();
     }
     
-    @RequestMapping(value="/averageApplicationsPerActiveUser", method = RequestMethod.GET)
+    @RequestMapping(value="/average-applications", method = RequestMethod.GET)
     public double getAverageApplicationsPerActiveUser() {
         return service.getAverageApplicationsPerActiveUser();
     }
     
-    @RequestMapping(value="/averageRolesPerActiveUser", method = RequestMethod.GET)
+    @RequestMapping(value="/average-roles", method = RequestMethod.GET)
     public double getAverageRolesPerActiveUser() {
         return service.getAverageRolesPerActiveUser();
     }
     
-    @RequestMapping(value="/averageEntitlementsPerActiveUser", method = RequestMethod.GET)
+    @RequestMapping(value="/average-entitlements", method = RequestMethod.GET)
     public double getAverageEntitlementsPerActiveUser() {
         return service.getAverageApplicationsPerActiveUser();
     }
-
-//    @RequestMapping(value="/application/total", method = RequestMethod.GET)
-//    public double getTotalApplications() {    	
-//		return service.getTotalApplications();
-//    }
 }

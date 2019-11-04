@@ -16,7 +16,7 @@ public class ApplicationService extends Service {
 		return singleQuery("SELECT COUNT(*) FROM APP_INSTANCE");
 	}
 	
-	public double maxActiveUsersInTargetApplication() {
+	public double getMaxActiveUsersInTargetApplication() {
 		return singleQuery("SELECT C AS \"COUNT(*)\" FROM "
 				+ "(SELECT COUNT(*) AS C FROM OIU, APP_INSTANCE, USR "
 				+ "WHERE OIU.APP_INSTANCE_KEY = APP_INSTANCE.APP_INSTANCE_KEY "
@@ -29,17 +29,17 @@ public class ApplicationService extends Service {
 		return entitlementService.getTotalEntitlements() / getTotalApplications();
 	}
 	
-	private double totalApplicationsAssignedToActiveUsers() {
+	private double getTotalApplicationsAssignedToActiveUsers() {
 		return singleQuery("SELECT COUNT(*) FROM OIU, APP_INSTANCE, USR "
 				+ "WHERE OIU.APP_INSTANCE_KEY = APP_INSTANCE.APP_INSTANCE_KEY "
 				+ "AND OIU.USR_KEY = USR.USR_KEY AND USR.USR_STATUS = 'Active'");
 	}
 	
-	public double averageActiveUsersInTargetApplications() {
-		return totalApplicationsAssignedToActiveUsers() / getTotalApplications();
+	public double getAverageActiveUsersInTargetApplication() {
+		return getTotalApplicationsAssignedToActiveUsers() / getTotalApplications();
 	}
 	
-	public double percentChangesPerTargetApplicationPerDay() {
+	public double getPercentChangesPerTargetApplicationPerDay() {
 		return 1;//TODO
 	}
 }
