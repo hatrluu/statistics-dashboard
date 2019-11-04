@@ -1,1 +1,4 @@
-<p>requests works!</p>
+<app-data-table *ngIf="isLoaded" [data]="data"></app-data-table>
+<div class="mat-spinner">
+<mat-spinner *ngIf="!isLoaded"></mat-spinner>
+</div>

@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "custom-build": "rm -rf ../src/main/resources/static/* && ng build --prod && cp -r dist/app/* ../src/main/resources/static",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

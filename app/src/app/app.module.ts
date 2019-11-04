@@ -11,7 +11,6 @@ import { APP_BASE_HREF, HashLocationStrategy, LocationStrategy, PathLocationStra
 //Pages
 import { UsersComponent } from './views/users/users.component';
 import { RolesComponent } from './views/roles/roles.component';
-import { EntitlementComponent } from './views/entitlement/entitlement.component';
 import { ApplicationsComponent } from './views/applications/applications.component';
 import { RequestsComponent } from './views/requests/requests.component';
 import { CertificationsComponent } from './views/certifications/certifications.component';
@@ -26,13 +25,13 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatDividerModule} from '@angular/material/divider';
+import { OrganizationsComponent } from './views/organizations/organizations.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     RolesComponent,
-    EntitlementComponent,
     ApplicationsComponent,
     RequestsComponent,
     CertificationsComponent,
@@ -40,7 +39,8 @@ import {MatDividerModule} from '@angular/material/divider';
     HeaderComponent,
     RefBarChartComponent,
     SidebarComponent,
-    DataTableComponent
+    DataTableComponent,
+    OrganizationsComponent
   ],
   imports: [
     BrowserModule,
