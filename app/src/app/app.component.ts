@@ -8,13 +8,13 @@ import { RouterOutlet } from '@angular/router';
   styleUrls: ['./app.component.css'],
   animations: [fader]
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'Statistics Dashboard';
-  constructor(private generalService: GeneralService){}
-  ngOnInit(){
+  constructor(private generalService: GeneralService) {}
+  ngOnInit() {
     this.generalService.getHeader('Users');
   }
-  preparedRoute(outlet: RouterOutlet){
-    return outlet && outlet.activatedRoute && outlet.activatedRouteData['animation'];
+  preparedRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRoute && outlet.activatedRouteData.animation;
   }
 }

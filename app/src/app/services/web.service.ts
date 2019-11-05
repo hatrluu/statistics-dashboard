@@ -37,8 +37,8 @@ export class WebService {
 
   getRequestsData(): Observable<any[]> {
     const selfServiceOperationsPerDay = this.http.get('/request/self-service-operations');
-    const adminOperationsPerDay = this.http.get('/request/admin-oprations');
-    const averageRequestsPerDay = this.http.get('/request/average-request');
+    const adminOperationsPerDay = this.http.get('/request/admin-operations');
+    const averageRequestsPerDay = this.http.get('/request/average-requests');
     const averageApprovalsPerDay = this.http.get('/request/average-approvals');
     return forkJoin([selfServiceOperationsPerDay,
       adminOperationsPerDay,

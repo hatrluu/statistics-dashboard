@@ -20,10 +20,10 @@ export class ApplicationsComponent implements OnInit {
           { metric: 'Maximum active users in a Single Target App	', value: res[2], min: 10000, med: 100000, max: 300000 },
           { metric: 'Average active user population per target app	', value: res[3], min: 5000, med: 50000, max: 100000 },
           { metric: '% Changes per day on each target application	', value: res[4], min: 1, med: 1, max: 1 },
-        ]
+        ];
         this.isLoaded = true;
       }
-    })
+    });
   }
 
 }

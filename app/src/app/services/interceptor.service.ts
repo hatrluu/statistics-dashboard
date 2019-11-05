@@ -8,6 +8,7 @@ export class InterceptorsService implements HttpInterceptor {
     constructor() { }
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const proxyReq = req.clone({ url: `http://${location.host}/statistics-dashboard${req.url}` });
+        // const proxyReq = req.clone({ url: `http://${location.hostname}:7001/statistics-dashboard${req.url}` });
         return next.handle(proxyReq)
             .pipe(
                 catchError((err: any) => {

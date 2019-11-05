@@ -1,15 +1,15 @@
-import { 
+import {
     trigger,
     transition,
     style,
     query,
     animate,
- } from "@angular/animations";
+ } from '@angular/animations';
 
- export const fader = 
-    trigger('routeAnimations',[
+export const fader =
+    trigger('routeAnimations', [
         transition('* <=> *', [
-            query(':enter, :leave',[
+            query(':enter, :leave', [
                 style({
                     position: 'absolute',
                     left: 0,
@@ -17,7 +17,7 @@ import {
                     opacity: 0,
                 })
             ]),
-            query(':enter',[
+            query(':enter', [
                 animate('600ms ease',
                     style({opacity: 1})
                 ),
