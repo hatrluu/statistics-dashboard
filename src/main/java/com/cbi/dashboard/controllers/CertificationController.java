@@ -5,17 +5,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cbi.dashboard.services.OrganizationService;
+import com.cbi.dashboard.services.CertificationService;
 
 @RestController
-@RequestMapping("/organization")
-public class OrganizationController {
+@RequestMapping("/certifications")
+public class CertificationController {
 
     @Autowired
-    OrganizationService service;
+    CertificationService service;
 
-    @RequestMapping(value="/total", method = RequestMethod.GET)
-    public double getTotalOrganizations() {    	
-		return service.getTotalOrganizations();
+    @RequestMapping(value="/enabled", method = RequestMethod.GET)
+    public boolean getCertificationEnabled() {    	
+		return service.getCertificationEnabled();
     }
 }

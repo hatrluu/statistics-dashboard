@@ -3,6 +3,7 @@ package com.cbi.dashboard.services;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public abstract class Service {
@@ -12,6 +13,14 @@ public abstract class Service {
 	private JdbcTemplate jdbcTemplate;  
 	
 	protected double singleQuery(String query) {
-		return jdbcTemplate.queryForObject(query, Double.class);
+		return singleQuery(query, Double.class);
+	}
+	
+	protected <T> T singleQuery(String query, Class<T> c) {
+		try {
+			return jdbcTemplate.queryForObject(query, c);
+		} catch (EmptyResultDataAccessException e) {
+			return null;
+		}
 	}
 }

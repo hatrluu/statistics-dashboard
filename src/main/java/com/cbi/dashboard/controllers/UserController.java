@@ -36,6 +36,6 @@ public class UserController {
     
     @RequestMapping(value="/average-entitlements", method = RequestMethod.GET)
     public double getAverageEntitlementsPerActiveUser() {
-        return service.getAverageApplicationsPerActiveUser();
+        return service.getAverageEntitlementsPerActiveUser();
     }
 }

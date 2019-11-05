@@ -15,7 +15,7 @@ public class AccessPolicyContoller {
 	AccessPolicyService service;
 
     @RequestMapping(value="/total", method = RequestMethod.GET)
-    public double getTotalApplications() {    	
+    public double getTotalAccessPolicies() {    	
 		return service.getTotalAccessPolicies();
     }
 
