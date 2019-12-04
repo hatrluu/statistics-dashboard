@@ -8,11 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.WebApplicationInitializer;
 
-//Tell Spring to automatically inject any dependencies that are marked in
-//our classes with @Autowired
 @EnableAutoConfiguration
-// Tell Spring that this object represents a Configuration for the
-// application
 @Configuration
 @ComponentScan
 public class StatisticsDashboard extends SpringBootServletInitializer implements WebApplicationInitializer {

@@ -1,9 +1,9 @@
-package com.cbi.dashboard.services;
+package com.cbi.dashboard.services.oim;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class AccessPolicyService extends Service {
+public class AccessPolicyService extends OIMService {
 
 	public double getTotalAccessPolicies() {
 		return singleQuery("SELECT COUNT(*) FROM POL");

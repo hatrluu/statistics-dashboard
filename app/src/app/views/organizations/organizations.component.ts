@@ -14,7 +14,7 @@ export class OrganizationsComponent implements OnInit {
   ngOnInit() {
     this.data = [];
     this.webService.getOrganizationsData().subscribe(res => {
-      this.data.push({metric: 'Total Number of target applications', value: res, min: 1, med: 5, max: 20});
+      this.data.push({metric: 'Total Number of Organizations', value: res, min: 1, med: 5, max: 20});
       this.isLoaded = true;
     });
   }

@@ -1,9 +1,9 @@
-package com.cbi.dashboard.services;
+package com.cbi.dashboard.services.oim;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class CertificationService extends Service {
+public class CertificationService extends OIMService {
 	public boolean getCertificationEnabled() {
 		String certificationOrAttestation = singleQuery("SELECT PTY_VALUE FROM PTY "
 				+ "WHERE PTY_KEYWORD = 'OIM.ShowCertificationOrAttestation'", 

@@ -1,9 +1,9 @@
-package com.cbi.dashboard.services;
+package com.cbi.dashboard.services.oim;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class UserService extends Service {
+public class UserService extends OIMService {
 	
 	public double getTotalUsers() {
 		return singleQuery("SELECT COUNT(*) FROM USR");

@@ -1,9 +1,9 @@
-package com.cbi.dashboard.services;
+package com.cbi.dashboard.services.oim;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class RequestService extends Service {
+public class RequestService extends OIMService {
 	public double getSelfServiceOperationsPerDay() {
 		return 0; //TODO
 	}

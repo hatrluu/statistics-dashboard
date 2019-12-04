@@ -1,10 +1,10 @@
-package com.cbi.dashboard.services;
+package com.cbi.dashboard.services.oim;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ApplicationService extends Service {
+public class ApplicationService extends OIMService {
 	
 	@Autowired
 	UserService userService;
