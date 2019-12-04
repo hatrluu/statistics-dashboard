@@ -26,6 +26,8 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatDividerModule} from '@angular/material/divider';
 import { OrganizationsComponent } from './views/organizations/organizations.component';
+import { SessionsComponent } from './views/sessions/sessions.component';
+import { SessionComponent } from './components/session/session.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { OrganizationsComponent } from './views/organizations/organizations.comp
     RefBarChartComponent,
     SidebarComponent,
     DataTableComponent,
-    OrganizationsComponent
+    OrganizationsComponent,
+    SessionsComponent,
+    SessionComponent
   ],
   imports: [
     BrowserModule,

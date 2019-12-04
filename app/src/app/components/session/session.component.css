@@ -1,0 +1,40 @@
+.session-container{
+    /* height: 10vh; */
+    display: grid;
+    grid-template-columns: 4fr 3fr 1fr ;
+    grid-template-rows: auto;
+   
+    /* display: flex;
+    justify-content: space-evenly; */
+}
+.session-userid{
+    grid-column-start: 1;
+    text-align: left;
+}
+.session-info-left{
+    /* grid-area: "b"; */
+    /* grid-column-start: 1; */
+    grid-row-start: 2;
+}
+.session-info-right{
+    /* grid-area: "c"; */
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+.session-info{
+    
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+.session-delete{
+    grid-area: "d";
+    grid-column-end: 4;
+    grid-row: 1/ span 2;
+    display: inline-grid;
+    justify-content: center;
+    align-items: center;
+}
+.session-delete button{
+    height: 8vh;
+}

@@ -57,4 +57,8 @@ export class WebService {
     const totalOrganizations = this.http.get('/organization/total');
     return totalOrganizations;
   }
+
+  getSessions(): Observable<any> {
+    return this.http.get('/sessions/all-sessions');
+  }
 }

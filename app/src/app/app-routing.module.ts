@@ -9,7 +9,7 @@ import { RequestsComponent } from './views/requests/requests.component';
 import { CertificationsComponent } from './views/certifications/certifications.component';
 import { AccessPolicyComponent } from './views/access-policy/access-policy.component';
 import { OrganizationsComponent } from './views/organizations/organizations.component';
-
+import { SessionsComponent } from './views/sessions/sessions.component';
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'users'},
   {path: 'users', component: UsersComponent, data: {routeName: 'Users', animation: 'Users'}},
@@ -18,7 +18,8 @@ const routes: Routes = [
   {path: 'organizations', component: OrganizationsComponent, data: {routeName: 'Organizations', animation: 'Applications'}},
   {path: 'requests', component: RequestsComponent, data: {routeName: 'Requests', animation: 'Requests'}},
   // {path: 'certifications', component: CertificationsComponent, data: {routeName: 'Certifications', animation: 'Certifications'}},
-  {path: 'access-policy', component: AccessPolicyComponent, data: {routeName: 'Access Policy', animation: 'AccessPolicy'}}
+  {path: 'access-policy', component: AccessPolicyComponent, data: {routeName: 'Access Policy', animation: 'AccessPolicy'}},
+  {path: 'sessions', component: SessionsComponent, data: {routeName: 'Sessions', animation: 'Sessions'}}
 ];
 
 @NgModule({
