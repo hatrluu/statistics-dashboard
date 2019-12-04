@@ -119,7 +119,7 @@
 						<configuration>
 							<arguments>install</arguments>
 						</configuration>
-					</execution>
+					</execution> -->
 					<execution>
 						<id>npm run build</id>
 						<goals>
