@@ -1,0 +1,10 @@
+.table {
+    font-size: 25px;
+}
+.table tbody th {
+    width: 25%;
+    text-align: right;
+    font-weight: 500;
+    font-size: 20px;
+    vertical-align: middle;
+}

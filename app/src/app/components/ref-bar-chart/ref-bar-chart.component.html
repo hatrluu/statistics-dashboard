@@ -1,0 +1,13 @@
+<div class="ref-bar" *ngIf="!isString">
+    <span class="ref-bar-text mr-0">{{min}}</span>
+    <div class="progress bar-height">
+        <span class="progress-bar-text">{{value}} ({{percentage}}%)</span>
+        <div class="progress-bar bar-height" [style.width.%]="percentage">
+        </div>
+    </div>
+    <span class="ref-bar-text ml-0">{{max}}</span>
+</div>
+
+<div class="ref-bar" *ngIf="isString">
+    <span class="ref-bar-text">{{value}}</span>
+</div>
