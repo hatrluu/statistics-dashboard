@@ -17,12 +17,12 @@ public class OAMSessionDAO {
 	protected JdbcTemplate oamJdbcTemplate;
 	
 	public List<OAMSession> getAllSessions() {
-        return oamJdbcTemplate.query("SELECT * FROM OAM_SESSION",
+        return oamJdbcTemplate.query("SELECT * FROM OAM_SESSION WHERE TIMEOUT_INTERVAL != 0",
                 new OAMSessionRowMapper());
     }
 	
 	public void delete(String sessionID) {
-        oamJdbcTemplate.update("DELETE FROM OAM_SESSION WHERE SESSIONID = ?",
+        oamJdbcTemplate.update("DELETE FROM OAM_SESSION WHERE SESSIONID = ? AND TIMEOUT_INTERVAL != 0",
                 new Object[] { sessionID });
     }
 }
