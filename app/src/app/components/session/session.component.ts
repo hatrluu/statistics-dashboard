@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-session',
@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SessionComponent implements OnInit {
   @Input() data;
+  @Output() onDelete = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
@@ -14,6 +15,6 @@ export class SessionComponent implements OnInit {
   }
 
   deleteSession(sessionID){
-    console.log(sessionID);
+    this.onDelete.emit(sessionID);
   }
 }

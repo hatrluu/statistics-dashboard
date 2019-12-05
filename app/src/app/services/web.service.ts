@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { forkJoin, Observable } from 'rxjs';
 
 @Injectable({
@@ -60,5 +60,14 @@ export class WebService {
 
   getSessions(): Observable<any> {
     return this.http.get('/sessions/all-sessions');
+  }
+  deleteSession(sessionID): Observable<any> {
+    const options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'text/plain'
+      }),
+      body: sessionID
+    }
+    return this.http.delete('/sessions/delete', options);
   }
 }

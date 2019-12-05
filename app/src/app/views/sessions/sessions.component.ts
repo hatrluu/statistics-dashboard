@@ -8,13 +8,24 @@ import { WebService } from 'src/app/services/web.service';
 })
 export class SessionsComponent implements OnInit {
   sessionsList = [];
-
+  isLoaded = false;
   constructor(private webService: WebService) { }
 
   ngOnInit() {
-    this.webService.getSessions().subscribe(res=>{
+    this.loadSessions();
+  }
+  loadSessions(){
+    this.webService.getSessions().toPromise().then(res=>{
       this.sessionsList = res;
+      this.isLoaded = true;
     })
   }
-
+  onDelete(sessionID){
+    this.webService.deleteSession(sessionID).toPromise().then(res=>{
+      console.log(res);
+    })
+    // .subscribe(res=>{
+    //     delete this.sessionsList[this.sessionsList.findIndex(session=>session.sessionID == sessionID)];
+    // })
+  }
 }
