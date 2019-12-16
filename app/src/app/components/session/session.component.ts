@@ -15,6 +15,6 @@ export class SessionComponent implements OnInit {
   }
 
   deleteSession(sessionID){
-    this.onDelete.emit(sessionID);
+    //this.onDelete.emit(sessionID);
   }
 }
