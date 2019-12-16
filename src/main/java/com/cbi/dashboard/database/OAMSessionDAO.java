@@ -22,7 +22,7 @@ public class OAMSessionDAO {
     }
 	
 	public void delete(String sessionID) {
-        oamJdbcTemplate.update("DELETE FROM OAM_SESSION WHERE SESSIONID = ? AND TIMEOUT_INTERVAL != 0",
-                new Object[] { sessionID });
+//        oamJdbcTemplate.update("DELETE FROM OAM_SESSION WHERE SESSIONID = ? AND TIMEOUT_INTERVAL != 0",
+//                new Object[] { sessionID });
     }
 }

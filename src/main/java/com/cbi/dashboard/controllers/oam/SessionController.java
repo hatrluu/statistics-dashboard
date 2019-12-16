@@ -55,15 +55,6 @@ public class SessionController {
     @RequestMapping(value="/delete", method = RequestMethod.DELETE)
     public void deleteSession(@RequestBody String sessionID) {    	
     	log.severe("Received request to delete session with id " + sessionID);
-    	System.out.println("Received request to delete session with id " + sessionID);
-    	service.deleteSession(sessionID);
-    }
-    
-    //TODO
-    @RequestMapping(value="/delete/{sessionID}", method = RequestMethod.DELETE)
-    public void deleteSessionParameter(@PathVariable("sessionID") String sessionID) {    	
-    	log.severe("Received request to delete session using parameter with id " + sessionID);
-    	System.out.println("Received request to delete session using parameter with id " + sessionID);
-    	service.deleteSession(sessionID);
+//    	service.deleteSession(sessionID);
     }
 }

@@ -28,6 +28,6 @@ public class SessionService extends OAMService {
 	}
 	
 	public void deleteSession(String sessionID) {
-		oamSessionDAO.delete(sessionID);
+//		oamSessionDAO.delete(sessionID);
 	}
 }
