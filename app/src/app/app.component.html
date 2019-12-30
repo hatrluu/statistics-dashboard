@@ -1,8 +1,8 @@
 <div class="App">
     <div class="row no-gutters">
-        <app-sidebar class="sidebar-container bg-light"></app-sidebar>
+        <app-sidebar (onSelect)="getHeader($event)" class="sidebar-container bg-light"></app-sidebar>
         <main [@routeAnimations]="preparedRoute(outlet)" class="col p-0" role="main">
-            <app-header></app-header>
+            <app-header [headerLabel]="headerTitle"></app-header>
             <router-outlet #outlet="outlet"></router-outlet>
         </main>
     </div>

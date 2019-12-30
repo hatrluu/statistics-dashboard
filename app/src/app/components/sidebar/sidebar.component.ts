@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { GeneralService } from '../../services/general.service';
 
@@ -8,6 +8,7 @@ import { GeneralService } from '../../services/general.service';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
+  @Output() onSelect = new EventEmitter();
   navList = [];
   active = false;
   constructor(public router: Router,
@@ -23,6 +24,7 @@ export class SidebarComponent implements OnInit {
 
   handleClick(e){
     this.active = !this.active;
+    this.onSelect.emit(e);
     this.generalService.getHeader(e);
   }
 

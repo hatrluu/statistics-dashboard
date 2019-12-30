@@ -19,6 +19,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { RefBarChartComponent } from './components/ref-bar-chart/ref-bar-chart.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DataTableComponent } from './components/data-table/data-table.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 //Styling
 import { MatSidenavModule } from '@angular/material/sidenav'; 
@@ -44,7 +45,8 @@ import { SessionComponent } from './components/session/session.component';
     DataTableComponent,
     OrganizationsComponent,
     SessionsComponent,
-    SessionComponent
+    SessionComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,

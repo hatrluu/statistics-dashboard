@@ -1,6 +1,9 @@
 <div class="mat-spinner">
         <mat-spinner *ngIf="!isLoaded"></mat-spinner>
-    </div>
-<div *ngFor="let session of sessionsList">
+</div>
+<div>
+    <app-search-bar (searchValue)="searchSession($event)"></app-search-bar>
+</div>
+<div *ngFor="let session of filteredList">
     <app-session [data]="session" (onDelete)="onDelete($event)"></app-session>
 </div>
